@@ -1,0 +1,68 @@
+
+<div class="container center">
+  <div class="register">
+    <div class="register_form">
+      <div class="form">
+        <form action="" #userForm="ngForm">
+          <h1>Register</h1>
+          <div class="input_name">
+            <input type="text" [(ngModel)]="user.firstName"
+                   name="firstname"
+                   required #firstname="ngModel"
+                   placeholder="firstname">
+
+            <input type="text" [(ngModel)]="user.lastName"
+                   name="lastname"
+                   required #lastname="ngModel"
+                   placeholder="lastname">
+          </div>
+          <div class="validation" style="display: flex; position: relative">
+            <div [hidden]="!(firstname.invalid && (firstname.dirty || firstname.touched))" class="validate_fname" style="color: #830d0d; position: absolute; top:-10px; left:5px">Firstname is required</div>
+            <div [hidden]="!(lastname.invalid && (lastname.dirty || lastname.touched))" class="validate_lname" style="color: #830d0d; position: absolute; top:-10px; right:50px">Lastname is required</div>
+          </div>
+          <input type="text" [(ngModel)]="user.uname"
+                 name="username"
+                 required #username="ngModel"
+                 placeholder="username">
+          <div style="position: relative"><div [hidden]="!(username.invalid && (username.dirty || username.touched))" class="validate_uname" style="color: #830d0d; position: absolute; top:-10px; left:5px">Username is required</div></div>
+
+          <input type="email" [(ngModel)]="user.email"
+                 name="email"
+                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                 required #email="ngModel"
+                 placeholder="email" style="position: relative">
+          <div style="position: relative"><div [hidden]="!(email.invalid && (email.dirty || email.touched)) && !email.errors?.pattern" class="validate_mail" style="color: #830d0d; position: absolute; top:-10px; left:5px">Email is required</div></div>
+          <input type="password" [(ngModel)]="user.passwd"
+                 name="password"
+                 required #password="ngModel"
+                 placeholder="password">
+          <div style="position: relative">
+            <div [hidden]="!(password.invalid && (password.dirty || password.touched))" class="validate_passwd" style="color: #830d0d; position: absolute; top:-15px; left:5px">Password is required</div></div>
+
+          <input [(ngModel)]="auth.password_confirm"
+            name="password_confirm"
+            placeholder="password confirm"
+            required #password_confirm="ngModel"
+            type="password">
+          <div style="position: relative">
+            <div [hidden]="!(password_confirm.invalid && (password_confirm.dirty || password_confirm.touched))" class="validate_passwd" style="color: #830d0d; position: absolute; top:-15px; left:5px">Password confirm is required</div>
+            <div [hidden]="password.value == password_confirm.value" class="validate_passwd" style="color: #830d0d; position: absolute; top: -0px; left:5px">Password does not match</div>
+          </div>
+          <div class="btn_register center">
+            <button class="button" [disabled]="!userForm.form.valid" (click)="onSubmit()">Register</button>
+          </div>
+          <span>Already have an account?</span><a style="color: #830d0d; margin-left: 2px" routerLink="/"> Login here!</a><router-outlet></router-outlet>
+        </form>
+      </div>
+
+      <div class="img_register" id="img_register">
+        <img [src]="srcMainImg">
+      </div>
+    </div>
+    <div class="img_r">
+      <img [src]="srcMainImg">
+    </div>
+  </div>
+
+</div>
+

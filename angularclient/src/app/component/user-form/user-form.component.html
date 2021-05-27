@@ -1,0 +1,40 @@
+
+<div class="container center">
+  <div class="login">
+    <div class="img_l dblock">
+      <img [src]="srcMainImg">
+    </div>
+    <div class="login_form dblock">
+      <div class="img_login dnone">
+        <img [src]="srcMainImg">
+      </div>
+      <div class="form">
+        <form action="" [formGroup]="loginform">
+          <h1>Login</h1>
+          <input type="text"
+                 required
+                 formControlName="username"
+                 placeholder="username">
+          <div style="position: relative"><div [hidden]="!(loginform.controls['username'].invalid && (loginform.controls['username'].dirty || loginform.controls['username'].touched))" class="validate_uname" style="color: #830d0d; position: absolute; top:-10px; left:5px">Username is required</div></div>
+          <input type="password"
+                 name="password"
+                 formControlName="password"
+                 placeholder="password">
+          <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+          <div style="position: relative; ">
+            <div [hidden]="!((loginform.controls['password'].invalid && (loginform.controls['password'].dirty || loginform.controls['password'].touched)))" class="validate_passwd" style="color: #830d0d; position: absolute; top:-10px; left:5px">Password is required</div>
+          </div>
+         <div style="display: flex; justify-content: flex-start; align-items: center">
+           <input style="margin: 0;padding: 0;width: 20px" type="checkbox" formControlName="rememberMe" id="remember">
+           <p style="margin-top: 15px;color: #830d0d">Remember me!</p>
+         </div>
+          <div class="btn_login center" style="margin-bottom: 10px">
+            <button class="button" [disabled]="!loginform.valid" (click)="onSubmit()" >Login</button>
+          </div>
+          <span>Create an account?</span><a class="href" style="margin-left: 3px; color: #830d0d" routerLink="/register" id="reg">Register here!</a><router-outlet></router-outlet>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

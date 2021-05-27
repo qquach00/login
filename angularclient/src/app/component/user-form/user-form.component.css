@@ -1,0 +1,295 @@
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.dnone {
+  display: none;
+}
+
+.dblock {
+  display: block;
+}
+
+.button {
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+  width: 100px;
+}
+
+.container {
+  height: 650px;
+}
+
+.container .login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 1px 1px 10px 10px #cecdcd;
+  box-shadow: 1px 1px 10px 10px #cecdcd;
+}
+
+.container .login .img_l {
+  height: 500px;
+  -webkit-animation: fadeIn 1s forwards;
+  animation: fadeIn 1s forwards;
+}
+
+.container .login .img_l img {
+  width: 450px;
+  height: 100%;
+}
+
+.container .login .login_form {
+  position: relative;
+  width: 450px;
+  height: 500px;
+  background: #c98c1c;
+}
+
+.container .login .login_form .img_login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.container .login .login_form .img_login img {
+  width: 450px;
+  height: 100%;
+}
+
+.container .login .login_form .form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 350px;
+}
+
+.container .login .login_form .form form h1 {
+  text-align: center;
+  -webkit-animation: tranformRightToLeft 1s forwards;
+  animation: tranformRightToLeft 1s forwards;
+}
+
+.href{
+  background: none;
+  border: none;
+  color: #bc0000;
+}
+
+.container .login .login_form .form form input {
+  -webkit-animation: tranformLeftToRight 1s forwards;
+  animation: tranformLeftToRight 1s forwards;
+  width: 250px;
+  border-radius: 8px;
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  margin: 20px;
+}
+
+.container .login .login_form .form form input:focus {
+  /*outline:1px solid #333;*/
+  /*border: 2px solid #333;*/
+  /*-moz-outline-radius: 8px;*/
+}
+
+.container .login .login_form .form form .btn_login button {
+  -webkit-animation: tranformRightToLeft 1s forwards;
+  animation: tranformRightToLeft 1s forwards;
+}
+
+.container .login .login_form .form form a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.container .register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 1px 1px 10px 10px #cecdcd;
+  box-shadow: 1px 1px 10px 10px #cecdcd;
+}
+
+.container .register .register_form {
+  position: relative;
+  width: 450px;
+  height: 500px;
+  background: #c98c1c;
+}
+
+.container .register .register_form .img_register {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: none;
+}
+
+.container .register .register_form .img_register img {
+  width: 450px;
+  height: 100%;
+}
+
+.container .register .register_form .form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 350px;
+}
+
+.container .register .register_form .form form h1 {
+  -webkit-animation: tranformRightToLeft 1s 1s forwards;
+  animation: tranformRightToLeft 1s 1s forwards;
+  text-align: center;
+}
+
+.container .register .register_form .form form .input_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .register .register_form .form form .input_name > input {
+  -webkit-animation: tranformLeftToRight 1s 1s forwards;
+  animation: tranformLeftToRight 1s 1s forwards;
+  width: 80px;
+  border-radius: 8px;
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  margin-left: 30px;
+}
+
+.container .register .register_form .form form .input_name > input:focus {
+  outline: #333;
+}
+
+.container .register .register_form .form form input {
+  -webkit-animation: tranformLeftToRight 1s 1s forwards;
+  animation: tranformLeftToRight 1s 1s forwards;
+  width: 250px;
+  border-radius: 8px;
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  margin: 30px;
+}
+
+.container .register .register_form .form form input:focus {
+  outline:1px solid #333;
+}
+
+.container .register .register_form .form form .btn_register button {
+  -webkit-animation: tranformRightToLeft 1s 1s forwards;
+  animation: tranformRightToLeft 1s 1s forwards;
+}
+
+.container .register .register_form .form form a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.container .register .img_r {
+  height: 500px;
+}
+
+.container .register .img_r img {
+  width: 450px;
+  height: 100%;
+}
+
+@-webkit-keyframes tranformLeftToRight {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@keyframes tranformLeftToRight {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes tranformRightToLeft {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@keyframes tranformRightToLeft {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */
