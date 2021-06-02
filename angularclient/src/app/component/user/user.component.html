@@ -1,29 +1,48 @@
 
-<p>Xin chào, <span>{{username}}</span></p><button class="href" (click)="logout()">Logout</button>
+<p>Welcome, <span>{{username}}</span></p><button class="href" (click)="logout()">Logout</button>
 <router-outlet></router-outlet>
-<input class="input" type="text" placeholder="search..." [(ngModel)]="filter">
 <div class="container center">
-  <table>
-    <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Username</th>
-      <th>Email</th>
-      <th></th>
-    </tr>
-    <tr *ngFor="let user of data |filter: filter| paginate: { id: 'pagination', itemsPerPage: 5, currentPage: pageNumber} ">
-      <td>{{user.firstName}}</td>
-      <td>{{user.lastName}}</td>
-      <td>{{user.uname}}</td>
-      <td>{{user.email}}</td>
-      <td><button class="button" (click)="deleteUser(user.uname)">Xoa</button></td>
-    </tr>
-  </table>
 
+<!--  <ag-grid-angular-->
+<!--      [rowData]="data"-->
+<!--      [columnDefs]="columnDefs"-->
+<!--      class="ag-theme-balham"-->
+<!--      style="width: 100vw;"-->
+<!--      [floatingFilter]="true"-->
+<!--      [floatingFiltersHeight]="20"-->
+<!--      [pagination]="true"-->
+<!--      [paginationPageSize]="5"-->
+<!--  ></ag-grid-angular>-->
+<!--  <table>-->
+<!--    <tr>-->
+<!--      <th>Firstname</th>-->
+<!--      <th>Lastname</th>-->
+<!--      <th>Username</th>-->
+<!--      <th>Email</th>-->
+<!--      <th></th>-->
+<!--    </tr>-->
+<!--    <tr *ngFor="let user of data |filter: filter| paginate: { id: 'pagination', itemsPerPage: 5, currentPage: pageNumber} ">-->
+<!--      <td>{{user.firstName}}</td>-->
+<!--      <td>{{user.lastName}}</td>-->
+<!--      <td>{{user.uname}}</td>-->
+<!--      <td>{{user.email}}</td>-->
+<!--      <td><button class="button" (click)="deleteUser(user.uname)">Delete</button></td>-->
+<!--    </tr>-->
+<!--  </table>-->
+
+  <ejs-grid [dataSource]="data" [allowFiltering]="true" [allowPaging]="true" [pageSettings]="pageSettings">
+    <e-columns>
+      <e-column field="uname" headerText="Username"></e-column>
+      <e-column field="firstName" headerText="Firstname"></e-column>
+      <e-column field="lastName" headerText="Lastname"></e-column>
+      <e-column field="email" headerText="Email"></e-column>
+      <e-column headerText="Delete"> fsgf</e-column>
+    </e-columns>
+  </ejs-grid>
 </div>
-<div style="position: fixed; top: 500px;">
-  <pagination-controls id="pagination"
-                       (pageChange)="pageNumber = $event"></pagination-controls>
-</div>
+<!--<div style="position: fixed; top: 500px;">-->
+<!--  <pagination-controls id="pagination"-->
+<!--                       (pageChange)="pageNumber = $event"></pagination-controls>-->
+<!--</div>-->
 
 <router-outlet></router-outlet>

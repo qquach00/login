@@ -8,12 +8,13 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserService} from "./service/user.service";
 import {HTTP_INTERCEPTORS, HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 import { UserFormComponent } from './component/user-form/user-form.component';
-import {RouterModule} from "@angular/router";
+import {AgGridModule} from "ag-grid-angular";
 import { RegisterComponent } from './component/register/register.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from "@angular/material/form-field";
+import {FilterService,ToolbarService, PageService, GridModule, PagerModule} from '@syncfusion/ej2-angular-grids'
 import {CookieService} from "angular2-cookie/services/cookies.service";
 import { FinishComponent } from './component/finish/finish.component';
 
@@ -46,9 +47,12 @@ export class XhrInterceptor implements HttpInterceptor {
         NgxPaginationModule,
         Ng2SearchPipeModule,
         BrowserAnimationsModule,
-        MatFormFieldModule
+        MatFormFieldModule,
+        GridModule,
+        PagerModule,
+        AgGridModule.withComponents([])
     ],
-  providers: [UserService, CookieService],
+  providers: [UserService, CookieService, FilterService, ToolbarService, PageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,12 +13,12 @@
 .input{
   -webkit-animation: tranformLeftToRight 1s forwards;
   animation: tranformLeftToRight 1s forwards;
-  width: 400px;
+  width: 150px;
   border-radius: 8px;
-  padding: 10px 15px;
+  padding: 5px 10px;
   outline: none;
   border: 1px solid #c98c1c;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .href {
   outline: none;
