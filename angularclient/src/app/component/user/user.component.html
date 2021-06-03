@@ -30,13 +30,13 @@
 <!--    </tr>-->
 <!--  </table>-->
 
-  <ejs-grid [dataSource]="data" [allowFiltering]="true" [allowPaging]="true" [pageSettings]="pageSettings">
+  <ejs-grid #grid [dataSource]="data" [allowFiltering]="true" (commandClick)="commandClick($event)" [allowPaging]="true" [pageSettings]="pageSettings">
     <e-columns>
-      <e-column field="uname" headerText="Username"></e-column>
+      <e-column field="uname" headerText="Username" [isPrimaryKey]="true"></e-column>
       <e-column field="firstName" headerText="Firstname"></e-column>
       <e-column field="lastName" headerText="Lastname"></e-column>
       <e-column field="email" headerText="Email"></e-column>
-      <e-column headerText="Delete"> fsgf</e-column>
+      <e-column headerText="Commands" [commands]="command"></e-column>
     </e-columns>
   </ejs-grid>
 </div>

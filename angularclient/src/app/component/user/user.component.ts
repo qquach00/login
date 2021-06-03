@@ -3,7 +3,15 @@ import { User } from '../../model/user';
 import {UserService} from "../../service/user.service";
 import {ActivatedRoute, Route, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import {GridComponent} from "@syncfusion/ej2-angular-grids";
+import {
+  CommandClickEventArgs,
+  CommandModel,
+  EditSettingsModel,
+  GridComponent,
+  ToolbarItems
+} from "@syncfusion/ej2-angular-grids";
+import { closest } from '@syncfusion/ej2-base';
+import {Command} from "@angular/cli/models/command";
 
 @Component({
   selector: 'app-user',
@@ -25,7 +33,9 @@ export class UserComponent implements OnInit {
   username: string= "";
   pageNumber :number = 1;
   filter: any;
-
+  editsettings: EditSettingsModel = {};
+  // toolbar: ToolbarItems[] =[];
+  command: CommandModel[] = [];
   // @ViewChild('grid') private grid : GridComponent;
   pageSettings: any;
   constructor(
@@ -40,7 +50,9 @@ export class UserComponent implements OnInit {
   ngOnInit() {
     this.getData();
 
-
+    this.editsettings = { allowEditing: true, allowDeleting: true};
+    this.command = [{buttonOption: {content: 'delete', cssClass: 'e-flat' }}];
+    // this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
     this.pageSettings = { pageSizes: true, pageSize: 5 };
     this.username = this.service.getUsername();
   }
@@ -51,6 +63,7 @@ export class UserComponent implements OnInit {
         this.totalRecords = this.data.length;
       })
   }
+
 
   deleteUser(username: string) {
     let resp = this.service.delete(username);
@@ -68,5 +81,9 @@ export class UserComponent implements OnInit {
   logout() {
     this.service.signOut();
     this.router.navigate(['/login']);
+  }
+
+  commandClick($event: CommandClickEventArgs): void {
+    console.log($event.rowData);
   }
 }
